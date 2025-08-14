@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Gate Pass and Official Business Logging System</title>
+    <link rel="stylesheet" href="Style1.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="cd_Logo.png" alt="Icon Logo" class="logo-icon">
+            <img src="DC_log.png" alt="Text Logo" class="logo-text">
+        </div>
+        <ul>
+            <li class="active"><i class="material-icons">dashboard</i>Dashboard</li>
+            <li><i class="material-icons">assignment</i>Request</li>
+            <li><i class="material-icons">list_alt</i>Gate Pass Logs</li>
+            <li><i class="material-icons">work_outline</i>Official Business Logs</li>
+        </ul>
+        <div class="section-title">Maintenance</div>
+        <ul>
+            <li><i class="material-icons">groups</i>Employee List</li>
+            <li><i class="material-icons">apartment</i>Department List</li>
+            <li><i class="material-icons">badge</i>Position List</li>
+            <li><i class="material-icons">group</i>Users List</li>
+            <li><i class="material-icons">settings</i>Settings</li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="topbar">
+            <span class="menu-btn"><i class="material-icons">menu</i></span>
+            <span class="title">Employee Gate Pass and Official Business Logging System</span>
+            <button class="admin" id="adminDropdownBtn" style="display: flex; align-items: center; gap: 8px;">
+                <img id="topbarAvatar" src="Usrname.png" alt="Avatar" style="width:32px; height:32px; border-radius:50%; box-shadow:0 2px 8px rgba(0,0,0,0.12);">
+                <span id="topbarName">Administrator Admin</span>
+                <img src="dds.png" alt="Admin Icon" class="admin-icon" style="width: 18px; height: 18px;">
+            </button>
+            <div id="adminDropdown" class="dropdown-content">
+                <a href="#"><i class="material-icons">person</i>My Account</a>
+                <hr>
+                <a href="Employee_Gatepass_and_Official_Business_System.HTML"><i class="material-icons">logout</i>Logout</a>
+            </div>
+        </div>
+        <div id="platform-dashboard" class="platform-section active">
+            <div class="dashboard-cards">
+                <div class="dashboard-card green">
+                    <div class="icon"><i class="material-icons">apartment</i></div>
+                    <div class="info">
+                        <div class="label">Department</div>
+                        <div class="count">4</div>
+                    </div>
+                </div>
+                <div class="dashboard-card yellow">
+                    <div class="icon"><i class="material-icons">list_alt</i></div>
+                    <div class="info">
+                        <div class="label">Designation</div>
+                        <div class="count">14</div>
+                    </div>
+                </div>
+                <div class="dashboard-card blue">
+                    <div class="icon"><i class="material-icons">groups</i></div>
+                    <div class="info">
+                        <div class="label">Employee</div>
+                        <div class="count">3</div>
+                    </div>
+                </div>
+                <div class="dashboard-card red">
+                    <div class="icon"><i class="material-icons">group</i></div>
+                    <div class="info">
+                        <div class="label">Users</div>
+                        <div class="count">3</div>
+                    </div>
+                </div>
+                <div class="dashboard-card blue">
+                    <div class="icon"><i class="material-icons">work_outline</i></div>
+                    <div class="info">
+                        <div class="label">OB Request</div>
+                        <div class="count">5</div>
+                    </div>
+                </div>
+                <div class="dashboard-card red">
+                    <div class="icon"><i class="material-icons">arrow_forward</i></div>
+                    <div class="info">
+                        <div class="label">Gate Pass Request</div>
+                        <div class="count">9</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="platform-request" class="platform-section">
+            <div class="platform-card">
+                <h2>Gate Pass and Official Business Request</h2>
+                <hr>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                    <div>
+                        <label for="showEmpEntries"><b>Show</b></label>
+                        <select id="showEmpEntries" style="padding:4px 8px;">
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                        <span>entries</span>
+                    </div>
+                    <div>
+                        <label for="searchEmp"><b>Search:</b></label>
+                        <input type="text" id="searchEmp" placeholder="Name" style="padding:4px 8px;">
+                    </div>
+                </div>
+                <table class="platform-table" id="requestTable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Date & Time in/out</th>
+                            <th>Avatar</th>
+                            <th>Employee</th>
+                            <th>Destination</th>
+                            <th>Company Info</th>
+                            <th>Status</th>
+                            <th>Reason</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2021-11-04 <br>10:49am - 11:49am</td>
+                            <td><img src="avatar1.png" style="width:40px; height:40px; border-radius:50%;"></td>
+                            <td>Blake, Claire C <br>Request: Official Business</td>
+                            <td>From: DC Monorack<br>To: Manila</td>
+                            <td>
+                                Department: HR Department<br>
+                                Position: HR Manager
+                            </td>
+                            <td>
+                                <span class="status-label" style="background:#ff9800; color:#fff; padding:2px 10px; border-radius:8px; font-size:13px;">Pending</span>
+                            </td>
+                            <td>HR Meeting</td>
+                            <td>
+                                <div class="action-dropdown">
+                                    <button class="action-btn" style="background:#c72e2e;" onclick="toggleActionDropdown(this)">Action <span style="font-size:14px;">▼</span></button>
+                                    <div class="action-dropdown-content" style="display:none; position:absolute; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.12); border-radius:8px; min-width:120px; z-index:10;">
+                                        <a href="#" onclick="updateStatus(this, 'Approve'); return false;" style="display:block; padding:8px 16px; color:#4caf50;">Approve</a>
+                                        <a href="#" onclick="updateStatus(this, 'Decline'); return false;" style="display:block; padding:8px 16px; color:#e05555;">Decline</a>
+                                        <a href="#" onclick="updateStatus(this, 'Pending'); return false;" style="display:block; padding:8px 16px; color:#ff9800;">Pending</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>2021-11-04 <br>10:30am - 11:30am</td>
+                            <td><img src="avatar2.png" style="width:40px; height:40px; border-radius:50%;"></td>
+                            <td>Smith, Johnny D <br>Request: Gate Pass</td>
+                            <td></td>
+                            <td>
+                                Department: IT Department<br>
+                                Position: Sr. Web Developer
+                            </td>
+                            <td>
+                                <span class="status-label" style="background:#4caf50; color:#fff; padding:2px 10px; border-radius:8px; font-size:13px;">Approve</span>
+                            </td>
+                            <td>Break Time</td>
+                            <td>
+                                <div class="action-dropdown">
+                                    <button class="action-btn" style="background:#c72e2e;" onclick="toggleActionDropdown(this)">Action <span style="font-size:14px;">▼</span></button>
+                                    <div class="action-dropdown-content" style="display:none; position:absolute; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.12); border-radius:8px; min-width:120px; z-index:10;">
+                                        <a href="#" onclick="updateStatus(this, 'Approve'); return false;" style="display:block; padding:8px 16px; color:#4caf50;">Approve</a>
+                                        <a href="#" onclick="updateStatus(this, 'Decline'); return false;" style="display:block; padding:8px 16px; color:#e05555;">Decline</a>
+                                        <a href="#" onclick="updateStatus(this, 'Pending'); return false;" style="display:block; padding:8px 16px; color:#ff9800;">Pending</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>2021-11-04 <br>10:30am - 11:30am</td>
+                            <td><img src="avatar2.png" style="width:40px; height:40px; border-radius:50%;"></td>
+                            <td>Smith, Johnny D <br>Request: Gate Pass</td>
+                            <td></td>
+                            <td>
+                                Department: IT Department<br>
+                                Position: Sr. Web Developer
+                            </td>
+                            <td>
+                                <span class="status-label" style="background:#4caf50; color:#fff; padding:2px 10px; border-radius:8px; font-size:13px;">Approve</span>
+                            </td>
+                            <td>Break Time</td>
+                            <td>
+                                <div class="action-dropdown">
+                                    <button class="action-btn" style="background:#c72e2e;" onclick="toggleActionDropdown(this)">Action <span style="font-size:14px;">▼</span></button>
+                                    <div class="action-dropdown-content" style="display:none; position:absolute; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.12); border-radius:8px; min-width:120px; z-index:10;">
+                                        <a href="#" onclick="updateStatus(this, 'Approve'); return false;" style="display:block; padding:8px 16px; color:#4caf50;">Approve</a>
+                                        <a href="#" onclick="updateStatus(this, 'Decline'); return false;" style="display:block; padding:8px 16px; color:#e05555;">Decline</a>
+                                        <a href="#" onclick="updateStatus(this, 'Pending'); return false;" style="display:block; padding:8px 16px; color:#ff9800;">Pending</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+                    <span id="showingEntries">Showing 1 to 2 of 2 entries</span>
+                    <div>
+                        <button id="prevPage" class="action-btn" style="padding:2px 12px; font-size:14px; background:#584e4e;">Previous</button>
+                        <span id="currentPage" style="margin:0 8px;">1</span>
+                        <button id="nextPage" class="action-btn" style="padding:2px 12px; font-size:14px; background:#584e4e;">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="platform-gatepasslogs" class="platform-section">
+            <div class="platform-card">
+                <h2>Gate Pass Logs</h2>
+                <button class="action-btn" style="background:#4caf50; position:absolute; right:40px; top:110px; color:#fff; min-width:80px;">
+                    <i class="material-icons" style="vertical-align:middle;">print</i> Print
+                </button>
+                <hr>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                    <div>
+                        <h2>Filter Date Range</h2>
+                        <label for="fromDate"><b>From</b></label>
+                        <input type="date" id="fromDate" style="margin-right:8px;">
+                        <label for="toDate"><b>To</b></label>
+                        <input type="date" id="toDate" style="margin-right:8px;">
+                        <button class="action-btn" style="background:#2979ff; color:#fff;">Filter</button><br>
+                        <h2></h2>
+                        <label for="showEntries"><b>Show</b></label>
+                        <select id="showEntries" style="padding:4px 8px;">
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                        <span>entries</span>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:12px; position:absolute; right:40px; top: 280px;">
+                        <label for="searchName"><b>Search:</b></label>
+                        <input type="text" id="searchName" placeholder="Name" style="padding:4px 8px;">
+                    </div>
+                </div>
+                <table class="platform-table" id="gatePassTable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Date Created</th>
+                            <th>Time in/out</th>
+                            <th>Avatar</th>
+                            <th>Employee</th>
+                            <th>Employee Details</th>
+                            <th>Purpose</th>
+                            <th>Log Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2025-07-22</td>
+                            <td>09:30am - 10:30am</td>
+                            <td><img src="avatar1.png" alt="Avatar" style="width:40px; height:40px; border-radius:50%;"></td>
+                            <td>Claire Blake</td>
+                            <td>
+                                Department: HR Department<br>
+                                Position: HR Manager
+                            </td>
+                            <td>Break Time</td>
+                            <td>Gate Pass</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>2025-07-22</td>
+                            <td>10:45am - 11:45am</td>
+                            <td><img src="avatar2.png" alt="Avatar" style="width:40px; height:40px; border-radius:50%;"></td>
+                            <td>John Smith</td>
+                            <td>
+                                Department: IT Department<br>
+                                Position: Developer
+                            </td>
+                            <td>Break Time</td>
+                            <td>Gate Pass</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+                    <span id="showingEntries">Showing 1 to 2 of 2 entries</span>
+                    <div>
+                        <button id="prevPage" class="action-btn" style="padding:2px 12px; font-size:14px; background:#584e4e;">Previous</button>
+                        <span id="currentPage" style="margin:0 8px;">1</span>
+                        <button id="nextPage" class="action-btn" style="padding:2px 12px; font-size:14px; background:#584e4e;">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="platform-oblogs" class="platform-section">
+            <div class="platform-card">
+                <h2>Official Business Logs</h2>
+                <button class="action-btn" style="background:#4caf50; position:absolute; right:40px; top:110px; color:#fff; min-width:80px;">
+                    <i class="material-icons" style="vertical-align:middle;">print</i> Print
+                </button>
+                <hr>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                    <div>
+                        <h2>Filter Date Range</h2>
+                        <label for="fromOBDate"><b>From</b></label>
+                        <input type="date" id="fromOBDate" style="margin-right:8px;">
+                        <label for="toOBDate"><b>To</b></label>
+                        <input type="date" id="toOBDate" style="margin-right:8px;">
+                        <button class="action-btn" style="background:#2979ff; color:#fff;">Filter</button><br>
+                        <h2></h2>
+                        <label for="showOBEntries"><b>Show</b></label>
+                        <select id="showOBEntries" style="padding:4px 8px;">
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                        <span>entries</span>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:12px; position:absolute; right:40px; top: 280px;">
+                        <label for="searchOBName"><b>Search:</b></label>
+                        <input type="text" id="searchOBName" placeholder="Name" style="padding:4px 8px;">
+                    </div>
+                </div>
+                <table class="platform-table" id="obLogsTable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Date Created</th>
+                            <th>Time in/out</th>
+                            <th>Avatar</th>
+                            <th>Employee</th>
+                            <th>Employee Details</th>
+                            <th>Purpose</th>
+                            <th>Log Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2025-07-22</td>
+                            <td>09:30am - 10:30am</td>
+                            <td><img src="avatar1.png" alt="Avatar" style="width:40px; height:40px; border-radius:50%;"></td>
+                            <td>Claire Blake</td>
+                            <td>
+                                Department: HR Department<br>
+                                Position: HR Manager
+                            </td>
+                            <td>HR Meeting</td>
+                            <td>Official Business</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>2025-07-22</td>
+                            <td>10:45am - 11:45am</td>
+                            <td><img src="avatar2.png" alt="Avatar" style="width:40px; height:40px; border-radius:50%;"></td>
+                            <td>John Smith</td>
+                            <td>
+                                Department: IT Department<br>
+                                Position: Developer
+                            </td>
+                            <td>IT Seminar</td>
+                            <td>Official Business</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+                    <span id="showingOBEntries">Showing 1 to 2 of 2 entries</span>
+                    <div>
+                        <button id="prevOBPage" class="action-btn" style="padding:2px 12px; font-size:14px; background:#584e4e;">Previous</button>
+                        <span id="currentOBPage" style="margin:0 8px;">1</span>
+                        <button id="nextOBPage" class="action-btn" style="padding:2px 12px; font-size:14px; background:#584e4e;">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="platform-employee" class="platform-section">
+            <div class="platform-card">
+                <h2>List of Employee</h2>
+                <hr>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                    <div>
+                        <label for="showEmpEntries"><b>Show</b></label>
+                        <select id="showEmpEntries" style="padding:4px 8px;">
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                        <span>entries</span>
+                    </div>
+                    <div>
+                        <label for="searchEmp"><b>Search:</b></label>
+                        <input type="text" id="searchEmp" placeholder="Name" style="padding:4px 8px;">
+                    </div>
+                </div>
+                <table class="platform-table" id="employeeTable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Date Created</th>
+                            <th>Avatar</th>
+                            <th>Employee</th>
+                            <th>Company Info</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2021-11-04 10:49</td>
+                            <td><img src="avatar1.png" style="width:40px; height:40px; border-radius:50%;"></td>
+                            <td>
+                                Code: 2021-0002<br>
+                                Name: Blake, Claire C
+                            </td>
+                            <td>
+                                Department: HR Department<br>
+                                Position: HR Manager
+                            </td>
+                            <td>
+                                <span style="background:#4caf50; color:#fff; padding:2px 10px; border-radius:8px; font-size:13px;">Active</span>
+                            </td>
+                            <td>
+                                <div class="action-dropdown">
+                                    <button class="action-btn" style="background:#c72e2e;" onclick="toggleActionDropdown(this)">Action <span style="font-size:14px;">▼</span></button>
+                                    <div class="action-dropdown-content" style="display:none; position:absolute; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.12); border-radius:8px; min-width:120px; z-index:10;">
+                                        <a href="#" style="color:#000000;">Edit</a>
+                                        <a href="#" style="color:#e05555;">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>2021-11-04 10:30</td>
+                            <td><img src="avatar2.png" style="width:40px; height:40px; border-radius:50%;"></td>
+                            <td>
+                                Code: 2021-0001<br>
+                                Name: Smith, Johnny D
+                            </td>
+                            <td>
+                                Department: IT Department<br>
+                                Position: Sr. Web Developer
+                            </td>
+                            <td>
+                                <span style="background:#4caf50; color:#fff; padding:2px 10px; border-radius:8px; font-size:13px;">Active</span>
+                            </td>
+                            <td>
+                                <div class="action-dropdown">
+                                    <button class="action-btn" style="background:#c72e2e;" onclick="toggleActionDropdown(this)">Action <span style="font-size:14px;">▼</span></button>
+                                    <div class="action-dropdown-content" style="display:none; position:absolute; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.12); border-radius:8px; min-width:120px; z-index:10;">
+                                        <a href="#" style="color:#000000;">Edit</a>
+                                        <a href="#" style="color:#e05555;">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+                    <span id="showingEmpEntries">Showing 1 to 2 of 2 entries</span>
+                    <div>
+                        <button id="prevEmpPage" class="action-btn" style="padding:2px 12px; font-size:14px; background:#584e4e;">Previous</button>
+                        <span id="currentEmpPage" style="margin:0 8px;">1</span>
+                        <button id="nextEmpPage" class="action-btn" style="padding:2px 12px; font-size:14px; background:#584e4e;">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="platform-department" class="platform-section">
+            <div class="platform-card">
+                <h2 style="display:flex; justify-content:space-between; align-items:center;">
+                    List of Department
+                    <button class="action-btn" style="background:#c72e2e; color:#fff; font-size:16px; display:flex; align-items:center; gap:6px; padding:8px 18px; border:none; border-radius:4px; cursor:pointer;">
+                        <span class="material-icons" style="font-size:20px;">add</span>
+                        Create New
+                    </button>
+                </h2>
+
+                <hr>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                    <div>
+                        <label for="showDeptEntries"><b>Show</b></label>
+                        <select id="showDeptEntries" style="padding:4px 8px;">
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                        <span>entries</span>
+                    </div>
+                    <div>
+                        <label for="searchDept"><b>Search:</b></label>
+                        <input type="text" id="searchDept" placeholder="Department Name" style="padding:4px 8px;">
+                    </div>
+                </div>
+                <table class="platform-table" id="departmentTable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Date Created</th>
+                            <th>Department Name</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2021-11-04 08:46</td>
+                            <td>Accounting and Finance</td>
+                            <td>Accounting and Finance Department</td>
+                            <td><span style="background:#4caf50; color:#fff; padding:2px 10px; border-radius:8px; font-size:13px;">Active</span></td>
+                            <td>
+                                <div class="action-dropdown">
+                                    <button class="action-btn" style="background:#c72e2e;" onclick="toggleActionDropdown(this)">Action <span style="font-size:14px;">▼</span></button>
+                                    <div class="action-dropdown-content" style="display:none; position:absolute; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.12); border-radius:8px; min-width:120px; z-index:10;">
+                                        <a href="#" style="color:#000000;">Edit</a>
+                                        <a href="#" style="color:#e05555;">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>2021-11-04 08:46</td>
+                            <td>HR Department</td>
+                            <td>Human Resource Department</td>
+                            <td><span style="background:#4caf50; color:#fff; padding:2px 10px; border-radius:8px; font-size:13px;">Active</span></td>
+                            <td>
+                                <div class="action-dropdown">
+                                    <button class="action-btn" style="background:#c72e2e;" onclick="toggleActionDropdown(this)">Action <span style="font-size:14px;">▼</span></button>
+                                    <div class="action-dropdown-content" style="display:none; position:absolute; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.12); border-radius:8px; min-width:120px; z-index:10;">
+                                        <a href="#" style="color:#000000;">Edit</a>
+                                        <a href="#" style="color:#e05555;">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>2021-11-04 08:46</td>
+                            <td>IT Department</td>
+                            <td>Information Technology Department</td>
+                            <td><span style="background:#4caf50; color:#fff; padding:2px 10px; border-radius:8px; font-size:13px;">Active</span></td>
+                            <td>
+                                <div class="action-dropdown">
+                                    <button class="action-btn" style="background:#c72e2e;" onclick="toggleActionDropdown(this)">Action <span style="font-size:14px;">▼</span></button>
+                                    <div class="action-dropdown-content" style="display:none; position:absolute; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.12); border-radius:8px; min-width:120px; z-index:10;">
+                                        <a href="#" style="color:#000000;">Edit</a>
+                                        <a href="#" style="color:#e05555;">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>2021-11-04 08:46</td>
+                            <td>Marketing Department</td>
+                            <td>Marketing Department</td>
+                            <td><span style="background:#4caf50; color:#fff; padding:2px 10px; border-radius:8px; font-size:13px;">Active</span></td>
+                            <td>
+                                <div class="action-dropdown">
+                                    <button class="action-btn" style="background:#c72e2e;" onclick="toggleActionDropdown(this)">Action <span style="font-size:14px;">▼</span></button>
+                                    <div class="action-dropdown-content" style="display:none; position:absolute; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.12); border-radius:8px; min-width:120px; z-index:10;">
+                                        <a href="#" style="color:#000000;">Edit</a>
+                                        <a href="#" style="color:#e05555;">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+                    <span id="showingDeptEntries">Showing 1 to 4 of 4 entries</span>
+                    <div>
+                        <button id="prevDeptPage" class="action-btn" style="padding:2px 12px; font-size:14px; background:#584e4e;">Previous</button>
+                        <span id="currentDeptPage" style="margin:0 8px;">1</span>
+                        <button id="nextDeptPage" class="action-btn" style="padding:2px 12px; font-size:14px; background:#584e4e;">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="platform-position" class="platform-section">
+            <div class="platform-card">
+                <h2 style="display:flex; justify-content:space-between; align-items:center;">
+                    List of Position
+                    <button class="action-btn" style="background:#c72e2e; color:#fff; font-size:16px; display:flex; align-items:center; gap:6px; padding:8px 18px; border:none; border-radius:4px; cursor:pointer;">
+                        <span class="material-icons" style="font-size:20px;">add</span>
+                        Add New
+                    </button>
+                </h2>
+                <hr>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                    <div>
+                        <label for="showDeptEntries"><b>Show</b></label>
+                        <select id="showDeptEntries" style="padding:4px 8px;">
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                        <span>entries</span>
+                    </div>
+                    <div>
+                        <label for="searchDept"><b>Search:</b></label>
+                        <input type="text" id="searchDept" placeholder="Department Name" style="padding:4px 8px;">
+                    </div>
+                </div>
+                <table class="platform-table" id="departmentTable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Date Created</th>
+                            <th>Department Name</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2021-11-04 08:46</td>
+                            <td>Accounting and Finance Manager</td>
+                            <td>Accounting and Finance Manager</td>
+                            <td><span style="background:#4caf50; color:#fff; padding:2px 10px; border-radius:8px; font-size:13px;">Active</span></td>
+                            <td>
+                                <div class="action-dropdown">
+                                    <button class="action-btn" style="background:#c72e2e;" onclick="toggleActionDropdown(this)">Action <span style="font-size:14px;">▼</span></button>
+                                    <div class="action-dropdown-content" style="display:none; position:absolute; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.12); border-radius:8px; min-width:120px; z-index:10;">
+                                        <a href="#" style="color:#000000;">Edit</a>
+                                        <a href="#" style="color:#e05555;">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>2021-11-04 08:46</td>
+                            <td>HR Manager</td>
+                            <td>Human Resource Manager</td>
+                            <td><span style="background:#4caf50; color:#fff; padding:2px 10px; border-radius:8px; font-size:13px;">Active</span></td>
+                            <td>
+                                <div class="action-dropdown">
+                                    <button class="action-btn" style="background:#c72e2e;" onclick="toggleActionDropdown(this)">Action <span style="font-size:14px;">▼</span></button>
+                                    <div class="action-dropdown-content" style="display:none; position:absolute; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.12); border-radius:8px; min-width:120px; z-index:10;">
+                                        <a href="#" style="color:#000000;">Edit</a>
+                                        <a href="#" style="color:#e05555;">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>2021-11-04 08:46</td>
+                            <td>IT Officer</td>
+                            <td>Information Technology Officer</td>
+                            <td><span style="background:#4caf50; color:#fff; padding:2px 10px; border-radius:8px; font-size:13px;">Active</span></td>
+                            <td>
+                                <div class="action-dropdown">
+                                    <button class="action-btn" style="background:#c72e2e;" onclick="toggleActionDropdown(this)">Action <span style="font-size:14px;">▼</span></button>
+                                    <div class="action-dropdown-content" style="display:none; position:absolute; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.12); border-radius:8px; min-width:120px; z-index:10;">
+                                        <a href="#" style="color:#000000;">Edit</a>
+                                        <a href="#" style="color:#e05555;">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>2021-11-04 08:46</td>
+                            <td>Marketing Manager</td>
+                            <td>Marketing Manager</td>
+                            <td><span style="background:#4caf50; color:#fff; padding:2px 10px; border-radius:8px; font-size:13px;">Active</span></td>
+                            <td>
+                                <div class="action-dropdown">
+                                    <button class="action-btn" style="background:#c72e2e;"onclick="toggleActionDropdown(this)">Action <span style="font-size:14px;">▼</span></button>
+                                    <div class="action-dropdown-content" style="display:none; position:absolute; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.12); border-radius:8px; min-width:120px; z-index:10;">
+                                        <a href="#" style="color:#000000;">Edit</a>
+                                        <a href="#" style="color:#e05555;">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+                    <span id="showingDeptEntries">Showing 1 to 4 of 4 entries</span>
+                    <div>
+                        <button id="prevDeptPage" class="action-btn" style="padding:2px 12px; font-size:14px; background:#584e4e;">Previous</button>
+                        <span id="currentDeptPage" style="margin:0 8px;">1</span>
+                        <button id="nextDeptPage" class="action-btn" style="padding:2px 12px; font-size:14px; background:#584e4e;">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="platform-users" class="platform-section">
+            <div class="platform-card">
+                <h2>List of System Users</h2>
+                <hr>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                    <div>
+                        <label for="showEmpEntries"><b>Show</b></label>
+                        <select id="showEmpEntries" style="padding:4px 8px;">
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                        <span>entries</span>
+                    </div>
+                    <div>
+                        <label for="searchEmp"><b>Search:</b></label>
+                        <input type="text" id="searchEmp" placeholder="Name" style="padding:4px 8px;">
+                    </div>
+                </div>
+                <table class="platform-table" id="employeeTable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Avatar</th>
+                            <th>Name</th>
+                            <th>Username</th>
+                            <th>User Type</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>    
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            
+                            <td><img src="avatar1.png" style="width:40px; height:40px; border-radius:50%;"></td>
+                            <td>
+                               Gerald Dacutanan
+                            </td>
+                            <td>
+                                gerald21
+                            </td>
+                            <td>
+                                Administrator
+                            </td>
+                            <td>
+                                <div class="action-dropdown">
+                                    <button class="action-btn" style="background:#c72e2e;" onclick="toggleActionDropdown(this)">Action <span style="font-size:14px;">▼</span></button>
+                                    <div class="action-dropdown-content" style="display:none; position:absolute; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.12); border-radius:8px; min-width:120px; z-index:10;">
+                                        <a href="#" style="color:#000000;">Edit</a>
+                                        <a href="#" style="color:#e05555;">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><img src="avatar2.png" style="width:40px; height:40px; border-radius:50%;"></td>
+                            <td>
+                                Roel Joseph Dalistan
+                            </td>
+                            <td>
+                                Roel123
+                            </td>
+                            <td>
+                                Staff
+                            </td>
+                            <td>
+                                <div class="action-dropdown">
+                                    <button class="action-btn" style="background:#c72e2e;" onclick="toggleActionDropdown(this)">Action <span style="font-size:14px;">▼</span></button>
+                                    <div class="action-dropdown-content" style="display:none; position:absolute; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.12); border-radius:8px; min-width:120px; z-index:10;">
+                                        <a href="#" style="color:#000000;">Edit</a>
+                                        <a href="#" style="color:#e05555;">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+                    <span id="showingEmpEntries">Showing 1 to 2 of 2 entries</span>
+                    <div>
+                        <button id="prevEmpPage" class="action-btn" style="padding:2px 12px; font-size:14px; background:#584e4e;">Previous</button>
+                        <span id="currentEmpPage" style="margin:0 8px;">1</span>
+                        <button id="nextEmpPage" class="action-btn" style="padding:2px 12px; font-size:14px; background:#584e4e;">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="platform-profile" class="platform-section">
+            <div class="platform-card">
+                <h2>Profile Settings</h2>
+                <hr>
+                <h2></h2>
+                <form class="profile-form" id="profileForm">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" value="Gerald">
+
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" value="Dacutanan">
+
+                    <label for="username">Username</label>
+                    <input type="text" id="username" value="gerald">
+
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Change password">
+
+                    <small>Leave this blank if you dont want to change the password.</small>
+
+                    <label for="avatar">Avatar</label>
+                    <input type="file" id="avatar">
+
+                    <div class="profile-avatar">
+                        <img id="avatarPreview" src="Usrname.png" alt="Avatar" style="width:80px; height:80px; border-radius:50%; margin-top:10px;">
+                    </div>
+
+                    <button type="submit" class="action-btn" style="margin-top:16px; background:#c72e2e">Update</button>
+                </form>
+                <div id="profileMsg" style="text-align:center; color:green; margin-top:10px; display:none;">Profile updated!</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Shrink/expand sidebar
+        document.querySelector('.menu-btn').onclick = function() {
+            var sidebar = document.querySelector('.sidebar');
+            var mainContent = document.querySelector('.main-content');
+            sidebar.classList.toggle('shrink');
+            mainContent.classList.toggle('shrink');
+        };
+        // Expand sidebar when clicking inside while shrunk
+        document.querySelector('.sidebar').onclick = function() {
+            var sidebar = document.querySelector('.sidebar');
+            var mainContent = document.querySelector('.main-content');
+            if (sidebar.classList.contains('shrink')) {
+                sidebar.classList.remove('shrink');
+                mainContent.classList.remove('shrink');
+            }
+        };
+        // Dropdown for admin
+        document.getElementById('adminDropdownBtn').onclick = function(e) {
+            e.stopPropagation();
+            var dropdown = document.getElementById('adminDropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        };
+        document.body.onclick = function() {
+            document.getElementById('adminDropdown').style.display = 'none';
+        };
+    </script>
+    <script>
+    const sidebarLinks = document.querySelectorAll('.sidebar ul li');
+    const platforms = document.querySelectorAll('.platform-section');
+    const platformMap = [
+        "platform-dashboard",
+        "platform-request",
+        "platform-gatepasslogs",
+        "platform-oblogs",
+        "platform-employee",
+        "platform-department",
+        "platform-position",
+        "platform-users"
+    ];
+
+    sidebarLinks.forEach((link, idx) => {
+        link.onclick = function(e) {
+            sidebarLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+            platforms.forEach(p => p.classList.remove('active'));
+            document.getElementById(platformMap[idx]).classList.add('active');
+        };
+    });
+
+    document.querySelector('#adminDropdown a[href="#"]').onclick = function(e) {
+        e.preventDefault();
+        document.querySelectorAll('.platform-section').forEach(p => p.classList.remove('active'));
+        document.getElementById('platform-profile').classList.add('active');
+        document.getElementById('adminDropdown').style.display = 'none';
+    };
+    </script>
+    <script>
+    // Make profile changable
+    document.getElementById('profileForm').onsubmit = function(e) {
+        e.preventDefault();
+        // Update topbar name
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        document.getElementById('topbarName').textContent = firstName + ' ' + lastName;
+        // Simulate update (show message)
+        document.getElementById('profileMsg').style.display = 'block';
+        setTimeout(function() {
+            document.getElementById('profileMsg').style.display = 'none';
+        }, 2000);
+    };
+
+    // Avatar preview and update topbar avatar
+    document.getElementById('avatar').onchange = function(e) {
+        const [file] = e.target.files;
+        if (file) {
+            const url = URL.createObjectURL(file);
+            document.getElementById('avatarPreview').src = url;
+            document.getElementById('topbarAvatar').src = url;
+        }
+    };
+
+    function updateStatus(link, status) {
+        var tr = link.closest('tr');
+        var statusTd = tr.querySelector('.status-label');
+        if (status === 'Approve') {
+            statusTd.textContent = 'Approve';
+            statusTd.style.background = '#4caf50';
+            statusTd.style.color = '#fff';
+        } else if (status === 'Decline') {
+            statusTd.textContent = 'Decline';
+            statusTd.style.background = '#e05555';
+            statusTd.style.color = '#fff';
+        } else if (status === 'Pending') {
+            statusTd.textContent = 'Pending';
+            statusTd.style.background = '#ff9800';
+            statusTd.style.color = '#fff';
+        }
+        // Hide dropdown after action
+        link.parentElement.parentElement.style.display = 'block';
+    }
+
+    function toggleActionDropdown(btn) {
+        var dropdown = btn.nextElementSibling;
+        // Hide other dropdowns
+        document.querySelectorAll('.action-dropdown-content').forEach(function(el) {
+            if (el !== dropdown) el.style.display = 'none';
+        });
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    }
+
+    document.body.addEventListener('click', function(e) {
+        if (!e.target.closest('.action-dropdown')) {
+            document.querySelectorAll('.action-dropdown-content').forEach(function(el) {
+                el.style.display = 'none';
+            });
+        }
+    });
+
+    // Name search filter for Gate Pass Logs
+    document.getElementById('searchName').addEventListener('input', function() {
+        const search = this.value.toLowerCase();
+        const rows = document.querySelectorAll('#gatePassTable tbody tr');
+        rows.forEach(row => {
+            const name = row.cells[4].textContent.toLowerCase();
+            row.style.display = name.includes(search) ? '' : 'none';
+        });
+    });
+
+    // Show entries filter for Gate Pass Logs
+    document.getElementById('showEntries').addEventListener('change', function() {
+        const max = parseInt(this.value, 10);
+        const rows = document.querySelectorAll('#gatePassTable tbody tr');
+        rows.forEach((row, idx) => {
+            row.style.display = idx < max ? '' : 'none';
+        });
+    });
+
+    // Pagination for Gate Pass Logs Table
+let gatePassCurrentPage = 1;
+let gatePassRowsPerPage = parseInt(document.getElementById('showEntries').value, 10);
+
+function updateGatePassTable() {
+    const rows = Array.from(document.querySelectorAll('#gatePassTable tbody tr'));
+    const totalRows = rows.length;
+    const totalPages = Math.ceil(totalRows / gatePassRowsPerPage) || 1;
+    gatePassCurrentPage = Math.max(1, Math.min(gatePassCurrentPage, totalPages));
+    const startIdx = (gatePassCurrentPage - 1) * gatePassRowsPerPage;
+    const endIdx = startIdx + gatePassRowsPerPage;
+
+    rows.forEach((row, idx) => {
+        row.style.display = (idx >= startIdx && idx < endIdx) ? '' : 'none';
+    });
+
+    // Update showing entries text
+    const showingStart = totalRows === 0 ? 0 : startIdx + 1;
+    const showingEnd = Math.min(endIdx, totalRows);
+    document.getElementById('showingEntries').textContent =
+        `Showing ${showingStart} to ${showingEnd} of ${totalRows} entries`;
+
+    // Update page number
+    document.getElementById('currentPage').textContent = gatePassCurrentPage;
+
+    // Enable/disable buttons
+    document.getElementById('prevPage').disabled = gatePassCurrentPage === 1;
+    document.getElementById('nextPage').disabled = gatePassCurrentPage === totalPages || totalRows === 0;
+}
+
+// Initial table update
+updateGatePassTable();
+
+// Change entries per page
+document.getElementById('showEntries').addEventListener('change', function() {
+    gatePassRowsPerPage = parseInt(this.value, 10);
+    gatePassCurrentPage = 1;
+    updateGatePassTable();
+});
+
+// Previous/Next buttons
+document.getElementById('prevPage').addEventListener('click', function() {
+    gatePassCurrentPage--;
+    updateGatePassTable();
+});
+document.getElementById('nextPage').addEventListener('click', function() {
+    gatePassCurrentPage++;
+    updateGatePassTable();
+});
+
+// Search filter (updates pagination)
+document.getElementById('searchName').addEventListener('input', function() {
+    const search = this.value.toLowerCase();
+    const rows = Array.from(document.querySelectorAll('#gatePassTable tbody tr'));
+    rows.forEach(row => {
+        const name = row.cells[4].textContent.toLowerCase();
+        row.dataset.visible = name.includes(search) ? "1" : "0";
+    });
+    // Only show filtered rows in pagination
+    const visibleRows = rows.filter(row => row.dataset.visible === "1");
+    const totalRows = visibleRows.length;
+    const totalPages = Math.ceil(totalRows / gatePassRowsPerPage) || 1;
+    gatePassCurrentPage = 1;
+    rows.forEach(row => row.style.display = 'none');
+    visibleRows.forEach((row, idx) => {
+        if (idx < gatePassRowsPerPage) row.style.display = '';
+    });
+    const showingStart = totalRows === 0 ? 0 : 1;
+    const showingEnd = Math.min(gatePassRowsPerPage, totalRows);
+    document.getElementById('showingEntries').textContent =
+        `Showing ${showingStart} to ${showingEnd} of ${totalRows} entries`;
+    document.getElementById('currentPage').textContent = gatePassCurrentPage;
+    document.getElementById('prevPage').disabled = true;
+    document.getElementById('nextPage').disabled = totalRows <= gatePassRowsPerPage;
+});
+
+// Employee List Table Search, Show Entries, Pagination
+let empCurrentPage = 1;
+let empRowsPerPage = parseInt(document.getElementById('showEmpEntries').value, 10);
+
+function updateEmployeeTable() {
+    const rows = Array.from(document.querySelectorAll('#employeeTable tbody tr'));
+    const totalRows = rows.length;
+    const totalPages = Math.ceil(totalRows / empRowsPerPage) || 1;
+    empCurrentPage = Math.max(1, Math.min(empCurrentPage, totalPages));
+    const startIdx = (empCurrentPage - 1) * empRowsPerPage;
+    const endIdx = startIdx + empRowsPerPage;
+
+    rows.forEach((row, idx) => {
+        row.style.display = (idx >= startIdx && idx < endIdx) ? '' : 'none';
+    });
+
+    // Update showing entries text
+    const showingStart = totalRows === 0 ? 0 : startIdx + 1;
+    const showingEnd = Math.min(endIdx, totalRows);
+    document.getElementById('showingEmpEntries').textContent =
+        `Showing ${showingStart} to ${showingEnd} of ${totalRows} entries`;
+
+    // Update page number
+    document.getElementById('currentEmpPage').textContent = empCurrentPage;
+
+    // Enable/disable buttons
+    document.getElementById('prevEmpPage').disabled = empCurrentPage === 1;
+    document.getElementById('nextEmpPage').disabled = empCurrentPage === totalPages || totalRows === 0;
+}
+
+// Initial table update
+updateEmployeeTable();
+
+// Change entries per page
+document.getElementById('showEmpEntries').addEventListener('change', function() {
+    empRowsPerPage = parseInt(this.value, 10);
+    empCurrentPage = 1;
+    updateEmployeeTable();
+});
+
+// Previous/Next buttons
+document.getElementById('prevEmpPage').addEventListener('click', function() {
+    empCurrentPage--;
+    updateEmployeeTable();
+});
+document.getElementById('nextEmpPage').addEventListener('click', function() {
+    empCurrentPage++;
+    updateEmployeeTable();
+});
+
+// Search filter (updates pagination)
+document.getElementById('searchEmp').addEventListener('input', function() {
+    const search = this.value.toLowerCase();
+    const rows = Array.from(document.querySelectorAll('#employeeTable tbody tr'));
+    rows.forEach(row => {
+        const name = row.cells[3].textContent.toLowerCase();
+        row.dataset.visible = name.includes(search) ? "1" : "0";
+    });
+    // Only show filtered rows in pagination
+    const visibleRows = rows.filter(row => row.dataset.visible === "1");
+    const totalRows = visibleRows.length;
+    const totalPages = Math.ceil(totalRows / empRowsPerPage) || 1;
+    empCurrentPage = 1;
+    rows.forEach(row => row.style.display = 'none');
+    visibleRows.forEach((row, idx) => {
+        if (idx < empRowsPerPage) row.style.display = '';
+    });
+    const showingStart = totalRows === 0 ? 0 : 1;
+    const showingEnd = Math.min(empRowsPerPage, totalRows);
+    document.getElementById('showingEmpEntries').textContent =
+        `Showing ${showingStart} to ${showingEnd} of ${totalRows} entries`;
+    document.getElementById('currentEmpPage').textContent = empCurrentPage;
+    document.getElementById('prevEmpPage').disabled = true;
+    document.getElementById('nextEmpPage').disabled = totalRows <= empRowsPerPage;
+});
+
+// Official Business Logs Table Search, Show Entries, Pagination
+let obCurrentPage = 1;
+let obRowsPerPage = parseInt(document.getElementById('showOBEntries').value, 10);
+
+function updateOBTable() {
+    const rows = Array.from(document.querySelectorAll('#obLogsTable tbody tr'));
+    const totalRows = rows.length;
+    const totalPages = Math.ceil(totalRows / obRowsPerPage) || 1;
+    obCurrentPage = Math.max(1, Math.min(obCurrentPage, totalPages));
+    const startIdx = (obCurrentPage - 1) * obRowsPerPage;
+    const endIdx = startIdx + obRowsPerPage;
+
+    rows.forEach((row, idx) => {
+        row.style.display = (idx >= startIdx && idx < endIdx) ? '' : 'none';
+    });
+
+    // Update showing entries text
+    const showingStart = totalRows === 0 ? 0 : startIdx + 1;
+    const showingEnd = Math.min(endIdx, totalRows);
+    document.getElementById('showingOBEntries').textContent =
+        `Showing ${showingStart} to ${showingEnd} of ${totalRows} entries`;
+
+    // Update page number
+    document.getElementById('currentOBPage').textContent = obCurrentPage;
+
+    // Enable/disable buttons
+    document.getElementById('prevOBPage').disabled = obCurrentPage === 1;
+    document.getElementById('nextOBPage').disabled = obCurrentPage === totalPages || totalRows === 0;
+}
+
+// Initial table update
+updateOBTable();
+
+// Change entries per page
+document.getElementById('showOBEntries').addEventListener('change', function() {
+    obRowsPerPage = parseInt(this.value, 10);
+    obCurrentPage = 1;
+    updateOBTable();
+});
+
+// Previous/Next buttons
+document.getElementById('prevOBPage').addEventListener('click', function() {
+    obCurrentPage--;
+    updateOBTable();
+});
+document.getElementById('nextOBPage').addEventListener('click', function() {
+    obCurrentPage++;
+    updateOBTable();
+});
+
+// Search filter (updates pagination)
+document.getElementById('searchOBName').addEventListener('input', function() {
+    const search = this.value.toLowerCase();
+    const rows = Array.from(document.querySelectorAll('#obLogsTable tbody tr'));
+    rows.forEach(row => {
+        const name = row.cells[4].textContent.toLowerCase();
+        row.dataset.visible = name.includes(search) ? "1" : "0";
+    });
+    // Only show filtered rows in pagination
+    const visibleRows = rows.filter(row => row.dataset.visible === "1");
+    const totalRows = visibleRows.length;
+    const totalPages = Math.ceil(totalRows / obRowsPerPage) || 1;
+    obCurrentPage = 1;
+    rows.forEach(row => row.style.display = 'none');
+    visibleRows.forEach((row, idx) => {
+        if (idx < obRowsPerPage) row.style.display = '';
+    });
+    const showingStart = totalRows === 0 ? 0 : 1;
+    const showingEnd = Math.min(obRowsPerPage, totalRows);
+    document.getElementById('showingOBEntries').textContent =
+        `Showing ${showingStart} to ${showingEnd} of ${totalRows} entries`;
+    document.getElementById('currentOBPage').textContent = obCurrentPage;
+    document.getElementById('prevOBPage').disabled = true;
+    document.getElementById('nextOBPage').disabled = totalRows <= obRowsPerPage;
+});
+    </script>
+</body>
+
+</html>
