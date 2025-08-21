@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Gatepass and Official Business System</title>
+    <link rel="stylesheet" href="Login.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro:wght@400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Moul:wght@400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap">
+    <link rel="stylesheet" href="https://fonts.rightfontapp.com/family/moul">
+    <link rel="stylesheet" href="https://font.download/font/kdam-thmor-pro">
+</head>
+<body>
+    <h1>Employee Gatepass and Official Business System</h1>
+
+    <div class="login-box-pic">
+        <form id="loginForm" action="login.php" method="POST">
+            <h2 class="login-title-pic">Login</h2>
+            <hr>
+            <p class="login-subtitle-pic">Sign in to start your session</p>
+            <div class="input-group-pic">
+                <input type="text" id="loginUsername" name="username" placeholder="Username" required>
+                <span class="input-icon-pic">
+                    <img src="Usrname.png" alt="User" width="32" height="32">
+                </span>
+            </div>
+            <div class="input-group-pic">
+                <input type="password" id="loginPassword" name="password" placeholder="Password" required>
+                <span class="input-icon-pic">
+                    <img src="Pssword.png" alt="Lock" width="32" height="32">
+                </span>
+            </div>
+            <button type="submit" class="login-btn-pic">Sign In</button>
+        </form>
+    </div>
+
+    <script>
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent actual form submission
+    window.location.href = "dashboard.html"; // Redirect to dashboard
+});
+</script>
+</body>
+</html>
